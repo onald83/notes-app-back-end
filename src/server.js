@@ -6,11 +6,11 @@ const init = async () => {
     port: 5000,
     // host: 'localhost'
     host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0'
-    routes: {
+    /* routes: {
         cors: {
             origin: ['*']
         }
-    }
+    } */
   })
 
   server.route(routes)
@@ -18,11 +18,11 @@ const init = async () => {
   await server.start()
   console.log(`Server berjalan pada ${server.info.uri}`)
 
-  const response = h.response({ error: false, message: 'Catatan berhasil ditambahkan' })
+  /* const response = h.response({ error: false, message: 'Catatan berhasil ditambahkan' })
 
   response.header('Access-Control-Allow-Origin', '*')
 
-  return response
+  return response */
 }
 
 init()
